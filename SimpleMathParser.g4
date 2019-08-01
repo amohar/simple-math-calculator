@@ -3,17 +3,16 @@ parser grammar SimpleMathParser;
 
 options { tokenVocab=SimpleMathLexer; }
 
-script : (command SEMI)*;
-command : assign
+script : command*;
+command : assign SEMI
         | comment;
-comment : HASH COMMENTCHARACTER+;
-assign : variable EQUAL value
-       | variable EQUAL calculate;
+comment : COMMENT;
+assign : VARIABLE EQUAL value
+       | VARIABLE EQUAL calculate;
 calculate : value ADD value
           | value SUBTRACT value
           | value MULTIPLY value
           | value DIVIDE value;
-value : variable
-      | digit;
-variable : DOLLAR VARCHARACTER+;
-digit : DIGIT+ (DOT DIGIT*)?;
+value : VARIABLE
+      | number;
+number : NUMBER;

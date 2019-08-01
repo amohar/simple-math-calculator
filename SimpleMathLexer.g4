@@ -1,15 +1,18 @@
 
 lexer grammar SimpleMathLexer;
 
-COMMENTCHARACTER: (~'#');
-VARCHARACTER: ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-');
-DIGIT: ('0'..'9');
-DOT: '.';
-DOLLAR: '$';
 EQUAL: '=';
 ADD: '+';
 SUBTRACT: '-';
 MULTIPLY: '*';
 DIVIDE: '/';
-HASH: '#';
 SEMI: ';';
+
+VARIABLE: '$' ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-')+;
+COMMENT: '#' ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-'|' ')*;
+NUMBER: DIGIT+ (DOT DIGIT+)?;
+
+WS: [ \n\t\r]+ -> skip;
+
+fragment DIGIT: ('0'..'9');
+fragment DOT: '.';
