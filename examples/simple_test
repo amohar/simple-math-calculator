@@ -4,3 +4,15 @@
 $asd = 123;
 $sad = $asd + 3;
 $test = $asd - $sad;
+
+if($asd) {
+    # Comment
+    $hehe = $baba;
+}
+
+while ($asd) {
+    break;
+}
+
+if ($asd)
+    $ahah = 23;
