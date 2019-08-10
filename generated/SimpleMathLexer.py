@@ -7,24 +7,44 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\16")
-        buf.write("\63\b\1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
-        buf.write("\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\3")
-        buf.write("\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3\b\3\b")
-        buf.write("\3\t\3\t\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r\2\2\16\3\3")
-        buf.write("\5\4\7\5\t\6\13\7\r\b\17\t\21\n\23\13\25\f\27\r\31\16")
-        buf.write("\3\2\4\3\2%%\7\2//\62;C\\aac|\2\62\2\3\3\2\2\2\2\5\3\2")
-        buf.write("\2\2\2\7\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2")
-        buf.write("\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2")
-        buf.write("\27\3\2\2\2\2\31\3\2\2\2\3\33\3\2\2\2\5\35\3\2\2\2\7\37")
-        buf.write("\3\2\2\2\t!\3\2\2\2\13#\3\2\2\2\r%\3\2\2\2\17\'\3\2\2")
-        buf.write("\2\21)\3\2\2\2\23+\3\2\2\2\25-\3\2\2\2\27/\3\2\2\2\31")
-        buf.write("\61\3\2\2\2\33\34\n\2\2\2\34\4\3\2\2\2\35\36\t\3\2\2\36")
-        buf.write("\6\3\2\2\2\37 \4\62;\2 \b\3\2\2\2!\"\7\60\2\2\"\n\3\2")
-        buf.write("\2\2#$\7&\2\2$\f\3\2\2\2%&\7?\2\2&\16\3\2\2\2\'(\7-\2")
-        buf.write("\2(\20\3\2\2\2)*\7/\2\2*\22\3\2\2\2+,\7,\2\2,\24\3\2\2")
-        buf.write("\2-.\7\61\2\2.\26\3\2\2\2/\60\7%\2\2\60\30\3\2\2\2\61")
-        buf.write("\62\7=\2\2\62\32\3\2\2\2\3\2\2")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\23")
+        buf.write("q\b\1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
+        buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
+        buf.write("\4\24\t\24\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\7")
+        buf.write("\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3\13\3\13\3\f\3\f\6\f@\n")
+        buf.write("\f\r\f\16\fA\3\r\3\r\7\rF\n\r\f\r\16\rI\13\r\3\16\6\16")
+        buf.write("L\n\16\r\16\16\16M\3\16\3\16\6\16R\n\16\r\16\16\16S\5")
+        buf.write("\16V\n\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20")
+        buf.write("\3\21\3\21\3\21\3\21\3\21\3\21\3\22\6\22h\n\22\r\22\16")
+        buf.write("\22i\3\22\3\22\3\23\3\23\3\24\3\24\2\2\25\3\3\5\4\7\5")
+        buf.write("\t\6\13\7\r\b\17\t\21\n\23\13\25\f\27\r\31\16\33\17\35")
+        buf.write("\20\37\21!\22#\23%\2\'\2\3\2\5\7\2//\62;C\\aac|\b\2\"")
+        buf.write("\"//\62;C\\aac|\5\2\13\f\17\17\"\"\2t\2\3\3\2\2\2\2\5")
+        buf.write("\3\2\2\2\2\7\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2")
+        buf.write("\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2")
+        buf.write("\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2")
+        buf.write("\2\37\3\2\2\2\2!\3\2\2\2\2#\3\2\2\2\3)\3\2\2\2\5+\3\2")
+        buf.write("\2\2\7-\3\2\2\2\t/\3\2\2\2\13\61\3\2\2\2\r\63\3\2\2\2")
+        buf.write("\17\65\3\2\2\2\21\67\3\2\2\2\239\3\2\2\2\25;\3\2\2\2\27")
+        buf.write("=\3\2\2\2\31C\3\2\2\2\33K\3\2\2\2\35W\3\2\2\2\37Z\3\2")
+        buf.write("\2\2!`\3\2\2\2#g\3\2\2\2%m\3\2\2\2\'o\3\2\2\2)*\7?\2\2")
+        buf.write("*\4\3\2\2\2+,\7-\2\2,\6\3\2\2\2-.\7/\2\2.\b\3\2\2\2/\60")
+        buf.write("\7,\2\2\60\n\3\2\2\2\61\62\7\61\2\2\62\f\3\2\2\2\63\64")
+        buf.write("\7=\2\2\64\16\3\2\2\2\65\66\7*\2\2\66\20\3\2\2\2\678\7")
+        buf.write("+\2\28\22\3\2\2\29:\7}\2\2:\24\3\2\2\2;<\7\177\2\2<\26")
+        buf.write("\3\2\2\2=?\7&\2\2>@\t\2\2\2?>\3\2\2\2@A\3\2\2\2A?\3\2")
+        buf.write("\2\2AB\3\2\2\2B\30\3\2\2\2CG\7%\2\2DF\t\3\2\2ED\3\2\2")
+        buf.write("\2FI\3\2\2\2GE\3\2\2\2GH\3\2\2\2H\32\3\2\2\2IG\3\2\2\2")
+        buf.write("JL\5%\23\2KJ\3\2\2\2LM\3\2\2\2MK\3\2\2\2MN\3\2\2\2NU\3")
+        buf.write("\2\2\2OQ\5\'\24\2PR\5%\23\2QP\3\2\2\2RS\3\2\2\2SQ\3\2")
+        buf.write("\2\2ST\3\2\2\2TV\3\2\2\2UO\3\2\2\2UV\3\2\2\2V\34\3\2\2")
+        buf.write("\2WX\7k\2\2XY\7h\2\2Y\36\3\2\2\2Z[\7y\2\2[\\\7j\2\2\\")
+        buf.write("]\7k\2\2]^\7n\2\2^_\7g\2\2_ \3\2\2\2`a\7d\2\2ab\7t\2\2")
+        buf.write("bc\7g\2\2cd\7c\2\2de\7m\2\2e\"\3\2\2\2fh\t\4\2\2gf\3\2")
+        buf.write("\2\2hi\3\2\2\2ig\3\2\2\2ij\3\2\2\2jk\3\2\2\2kl\b\22\2")
+        buf.write("\2l$\3\2\2\2mn\4\62;\2n&\3\2\2\2op\7\60\2\2p(\3\2\2\2")
+        buf.write("\t\2AGMSUi\3\b\2\2")
         return buf.getvalue()
 
 
@@ -34,33 +54,41 @@ class SimpleMathLexer(Lexer):
 
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
-    COMMENTCHARACTER = 1
-    VARCHARACTER = 2
-    DIGIT = 3
-    DOT = 4
-    DOLLAR = 5
-    EQUAL = 6
-    ADD = 7
-    SUBTRACT = 8
-    MULTIPLY = 9
-    DIVIDE = 10
-    HASH = 11
-    SEMI = 12
+    EQUAL = 1
+    ADD = 2
+    SUBTRACT = 3
+    MULTIPLY = 4
+    DIVIDE = 5
+    SEMI = 6
+    BRACE_L = 7
+    BRACE_R = 8
+    CURLY_L = 9
+    CURLY_R = 10
+    VARIABLE = 11
+    COMMENT = 12
+    NUMBER = 13
+    IF = 14
+    WHILE = 15
+    BREAK = 16
+    WS = 17
 
     channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
 
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "'.'", "'$'", "'='", "'+'", "'-'", "'*'", "'/'", "'#'", "';'" ]
+            "'='", "'+'", "'-'", "'*'", "'/'", "';'", "'('", "')'", "'{'", 
+            "'}'", "'if'", "'while'", "'break'" ]
 
     symbolicNames = [ "<INVALID>",
-            "COMMENTCHARACTER", "VARCHARACTER", "DIGIT", "DOT", "DOLLAR", 
-            "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "HASH", "SEMI" ]
+            "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "SEMI", "BRACE_L", 
+            "BRACE_R", "CURLY_L", "CURLY_R", "VARIABLE", "COMMENT", "NUMBER", 
+            "IF", "WHILE", "BREAK", "WS" ]
 
-    ruleNames = [ "COMMENTCHARACTER", "VARCHARACTER", "DIGIT", "DOT", "DOLLAR", 
-                  "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "HASH", 
-                  "SEMI" ]
+    ruleNames = [ "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "SEMI", 
+                  "BRACE_L", "BRACE_R", "CURLY_L", "CURLY_R", "VARIABLE", 
+                  "COMMENT", "NUMBER", "IF", "WHILE", "BREAK", "WS", "DIGIT", 
+                  "DOT" ]
 
     grammarFileName = "SimpleMathLexer.g4"
 
