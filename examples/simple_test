@@ -1,8 +1,6 @@
 
 # This is a simple test
 
-while ($haha)
-{
-    $bebe = 23;
-    break;
-}
+$haha = 23;
+$bebe = 32 + $haha;
+$iti = $smoja;

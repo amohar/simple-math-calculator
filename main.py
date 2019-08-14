@@ -3,6 +3,7 @@ import antlr4
 from generated.SimpleMathLexer import SimpleMathLexer
 from generated.SimpleMathParser import SimpleMathParser
 from interpreter.InterpreterMathParserVisitor import InterpreterMathParserVisitor
+from calc.Calculator import Calculator
 
 def main(argv):
     istream = antlr4.FileStream(argv[1])
@@ -13,8 +14,11 @@ def main(argv):
     #print(tree.toStringTree(recog=parser))
 
     visitor = InterpreterMathParserVisitor()
-    test = visitor.visit(tree)
-    print(test)
+    astTree = visitor.visit(tree)
+    calculator = Calculator()
+    calculator.calculate(astTree)
+    
+    print(astTree)
 
 if __name__ == '__main__':
     main(sys.argv)

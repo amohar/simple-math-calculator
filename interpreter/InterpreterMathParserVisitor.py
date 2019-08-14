@@ -1,8 +1,8 @@
-from enum import Enum
 from antlr4 import *
 from generated.SimpleMathParserVisitor import SimpleMathParserVisitor
 from generated.SimpleMathParser import SimpleMathParser
 from calc.AstClasses import *
+from calc.Enums import *
 
 # This class defines a complete listener for a parse tree produced by SimpleMathParser.
 class InterpreterMathParserVisitor(SimpleMathParserVisitor):
@@ -119,13 +119,3 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
             return self.visitChildren(ctx)
 
 
-class ValueType(Enum):
-    VALUE = 1
-    VARIABLE = 2
-
-class OperatorType(Enum):
-    ADD = 1
-    SUBTRACT = 2
-    MULTIPLY = 3
-    DIVIDE = 4
-    UNARYMIN = 5
