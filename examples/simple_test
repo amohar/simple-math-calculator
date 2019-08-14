@@ -1,9 +1,7 @@
 
 # This is a simple test
 
-$haha = !23;
-$bebe = 32 > $haha;
-
-print("haha");
-print("test", $haha, " test more ", 1 + $bebe);
-print();
+if (0)
+    print("HAHA");
+else
+    print("BEBE");

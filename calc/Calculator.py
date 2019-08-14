@@ -13,7 +13,8 @@ class Calculator(object):
             Assign: self._handleAssign,
             Calculate: self._handleCalculate,
             Value: self._handleValue,
-            PrintCommand: self._handlePrintCommand
+            PrintCommand: self._handlePrintCommand,
+            IfCommand: self._handleIfCommand
         }
 
         command = switcher.get(type(astTree), None)
@@ -65,3 +66,9 @@ class Calculator(object):
             return param
         else:
             return str(self.calculate(param))
+
+    def _handleIfCommand(self, tree:IfCommand):
+        if (self.calculate(tree.condition)):
+            self.calculate(tree.body)
+        elif (tree.elseBody != None):
+            self.calculate(tree.elseBody)
