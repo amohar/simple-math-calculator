@@ -5,6 +5,8 @@ class Calculator(object):
 
     def __init__(self):
         self._variables = {}
+        self._loopDepth = 0
+        self._shouldBreak = False
 
     def calculate(self, astTree):
         switcher = {
@@ -14,7 +16,9 @@ class Calculator(object):
             Calculate: self._handleCalculate,
             Value: self._handleValue,
             PrintCommand: self._handlePrintCommand,
-            IfCommand: self._handleIfCommand
+            IfCommand: self._handleIfCommand,
+            WhileCommand: self._handleWhileCommand,
+            BreakCommand: self._handleBreakCommand
         }
 
         command = switcher.get(type(astTree), None)
@@ -26,6 +30,8 @@ class Calculator(object):
     def _handleList(self, tree):
         for item in tree:
             self.calculate(item)
+            if self._shouldBreak:
+                break
 
     def _handleBody(self, tree:Body):
         self.calculate(tree.lines)
@@ -72,3 +78,18 @@ class Calculator(object):
             self.calculate(tree.body)
         elif (tree.elseBody != None):
             self.calculate(tree.elseBody)
+    
+    def _handleWhileCommand(self, tree:WhileCommand):
+        self._loopDepth += 1
+        while (self.calculate(tree.condition)):
+            self.calculate(tree.body)
+            if (self._shouldBreak):
+                self._shouldBreak = False
+                break
+        self._loopDepth -= 1
+
+    def _handleBreakCommand(self, tree:BreakCommand):
+        if self._loopDepth == 0:
+            raise Exception("'break' command found outside loop.")
+        else:
+            self._shouldBreak = True
