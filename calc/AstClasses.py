@@ -14,6 +14,10 @@ class WhileCommand(object):
         self.condition = condition
         self.body = body
 
+class BreakCommand(object):
+    def __init__(self):
+        pass
+
 class Value(object):
     def __init__(self, value, type):
         self.value = value

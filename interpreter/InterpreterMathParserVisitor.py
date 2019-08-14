@@ -83,7 +83,7 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
 
     # Visit a parse tree produced by SimpleMathParser#BreakCommand.
     def visitBreakCommand(self, ctx:SimpleMathParser.BreakCommandContext):
-        return self.visitChildren(ctx)
+        return BreakCommand()
 
 
     # Visit a parse tree produced by SimpleMathParser#assign.
