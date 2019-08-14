@@ -37,7 +37,14 @@ class Calculator(object):
             OperatorType.SUBTRACT: lambda: self.calculate(tree.left) - self.calculate(tree.right),
             OperatorType.MULTIPLY: lambda: self.calculate(tree.left) * self.calculate(tree.right),
             OperatorType.DIVIDE: lambda: self.calculate(tree.left) / self.calculate(tree.right),
+            OperatorType.COMPARE_EQ: lambda: 1 if self.calculate(tree.left) == self.calculate(tree.right) else 0,
+            OperatorType.COMPARE_NE: lambda: 1 if self.calculate(tree.left) != self.calculate(tree.right) else 0,
+            OperatorType.COMPARE_G: lambda: 1 if self.calculate(tree.left) > self.calculate(tree.right) else 0,
+            OperatorType.COMPARE_GE: lambda: 1 if self.calculate(tree.left) >= self.calculate(tree.right) else 0,
+            OperatorType.COMPARE_L: lambda: 1 if self.calculate(tree.left) < self.calculate(tree.right) else 0,
+            OperatorType.COMPARE_LE: lambda: 1 if self.calculate(tree.left) <= self.calculate(tree.right) else 0,
             OperatorType.UNARYMIN: lambda: -self.calculate(tree.right),
+            OperatorType.UNARYNOT: lambda: 0 if self.calculate(tree.right) else 1,
         }
         test = switcher.get(tree.op, None)()
         return test

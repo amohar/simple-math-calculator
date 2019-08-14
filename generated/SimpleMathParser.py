@@ -7,8 +7,8 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\24")
-        buf.write("u\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\33")
+        buf.write("z\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\3\2\3\2\3\3\3\3\7\3\33")
         buf.write("\n\3\f\3\16\3\36\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
         buf.write("\5\4(\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\62\n\5\3")
@@ -16,35 +16,37 @@ def serializedATN():
         buf.write("\6\3\6\3\6\3\6\5\6E\n\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3")
         buf.write("\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7U\n\7\3\b\3\b\3\t\3\t\3")
         buf.write("\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
-        buf.write("\3\13\5\13h\n\13\3\13\3\13\3\13\3\13\3\13\3\13\7\13p\n")
-        buf.write("\13\f\13\16\13s\13\13\3\13\2\3\24\f\2\4\6\b\n\f\16\20")
-        buf.write("\22\24\2\4\3\2\6\7\3\2\4\5\2y\2\26\3\2\2\2\4\34\3\2\2")
-        buf.write("\2\6\'\3\2\2\2\b;\3\2\2\2\nD\3\2\2\2\fT\3\2\2\2\16V\3")
-        buf.write("\2\2\2\20X\3\2\2\2\22Z\3\2\2\2\24g\3\2\2\2\26\27\5\4\3")
-        buf.write("\2\27\3\3\2\2\2\30\33\5\6\4\2\31\33\5\20\t\2\32\30\3\2")
-        buf.write("\2\2\32\31\3\2\2\2\33\36\3\2\2\2\34\32\3\2\2\2\34\35\3")
-        buf.write("\2\2\2\35\5\3\2\2\2\36\34\3\2\2\2\37 \5\22\n\2 !\7\b\2")
-        buf.write("\2!(\3\2\2\2\"(\5\b\5\2#(\5\f\7\2$%\5\16\b\2%&\7\b\2\2")
-        buf.write("&(\3\2\2\2\'\37\3\2\2\2\'\"\3\2\2\2\'#\3\2\2\2\'$\3\2")
-        buf.write("\2\2(\7\3\2\2\2)*\7\20\2\2*+\7\t\2\2+,\5\24\13\2,-\7\n")
-        buf.write("\2\2-.\7\13\2\2./\5\4\3\2/\61\7\f\2\2\60\62\5\n\6\2\61")
-        buf.write("\60\3\2\2\2\61\62\3\2\2\2\62<\3\2\2\2\63\64\7\20\2\2\64")
-        buf.write("\65\7\t\2\2\65\66\5\24\13\2\66\67\7\n\2\2\679\5\6\4\2")
-        buf.write("8:\5\n\6\298\3\2\2\29:\3\2\2\2:<\3\2\2\2;)\3\2\2\2;\63")
-        buf.write("\3\2\2\2<\t\3\2\2\2=>\7\21\2\2>?\7\13\2\2?@\5\4\3\2@A")
-        buf.write("\7\f\2\2AE\3\2\2\2BC\7\21\2\2CE\5\6\4\2D=\3\2\2\2DB\3")
-        buf.write("\2\2\2E\13\3\2\2\2FG\7\22\2\2GH\7\t\2\2HI\5\24\13\2IJ")
-        buf.write("\7\n\2\2JK\7\13\2\2KL\5\4\3\2LM\7\f\2\2MU\3\2\2\2NO\7")
-        buf.write("\22\2\2OP\7\t\2\2PQ\5\24\13\2QR\7\n\2\2RS\5\6\4\2SU\3")
-        buf.write("\2\2\2TF\3\2\2\2TN\3\2\2\2U\r\3\2\2\2VW\7\23\2\2W\17\3")
-        buf.write("\2\2\2XY\7\16\2\2Y\21\3\2\2\2Z[\7\r\2\2[\\\7\3\2\2\\]")
-        buf.write("\5\24\13\2]\23\3\2\2\2^_\b\13\1\2_`\7\5\2\2`h\5\24\13")
-        buf.write("\bab\7\t\2\2bc\5\24\13\2cd\7\n\2\2dh\3\2\2\2eh\7\r\2\2")
-        buf.write("fh\7\17\2\2g^\3\2\2\2ga\3\2\2\2ge\3\2\2\2gf\3\2\2\2hq")
-        buf.write("\3\2\2\2ij\f\6\2\2jk\t\2\2\2kp\5\24\13\7lm\f\5\2\2mn\t")
-        buf.write("\3\2\2np\5\24\13\6oi\3\2\2\2ol\3\2\2\2ps\3\2\2\2qo\3\2")
-        buf.write("\2\2qr\3\2\2\2r\25\3\2\2\2sq\3\2\2\2\r\32\34\'\619;DT")
-        buf.write("goq")
+        buf.write("\3\13\3\13\3\13\5\13j\n\13\3\13\3\13\3\13\3\13\3\13\3")
+        buf.write("\13\3\13\3\13\3\13\7\13u\n\13\f\13\16\13x\13\13\3\13\2")
+        buf.write("\3\24\f\2\4\6\b\n\f\16\20\22\24\2\5\3\2\21\26\3\2\6\7")
+        buf.write("\3\2\4\5\2\u0080\2\26\3\2\2\2\4\34\3\2\2\2\6\'\3\2\2\2")
+        buf.write("\b;\3\2\2\2\nD\3\2\2\2\fT\3\2\2\2\16V\3\2\2\2\20X\3\2")
+        buf.write("\2\2\22Z\3\2\2\2\24i\3\2\2\2\26\27\5\4\3\2\27\3\3\2\2")
+        buf.write("\2\30\33\5\6\4\2\31\33\5\20\t\2\32\30\3\2\2\2\32\31\3")
+        buf.write("\2\2\2\33\36\3\2\2\2\34\32\3\2\2\2\34\35\3\2\2\2\35\5")
+        buf.write("\3\2\2\2\36\34\3\2\2\2\37 \5\22\n\2 !\7\b\2\2!(\3\2\2")
+        buf.write("\2\"(\5\b\5\2#(\5\f\7\2$%\5\16\b\2%&\7\b\2\2&(\3\2\2\2")
+        buf.write("\'\37\3\2\2\2\'\"\3\2\2\2\'#\3\2\2\2\'$\3\2\2\2(\7\3\2")
+        buf.write("\2\2)*\7\27\2\2*+\7\t\2\2+,\5\24\13\2,-\7\n\2\2-.\7\13")
+        buf.write("\2\2./\5\4\3\2/\61\7\f\2\2\60\62\5\n\6\2\61\60\3\2\2\2")
+        buf.write("\61\62\3\2\2\2\62<\3\2\2\2\63\64\7\27\2\2\64\65\7\t\2")
+        buf.write("\2\65\66\5\24\13\2\66\67\7\n\2\2\679\5\6\4\28:\5\n\6\2")
+        buf.write("98\3\2\2\29:\3\2\2\2:<\3\2\2\2;)\3\2\2\2;\63\3\2\2\2<")
+        buf.write("\t\3\2\2\2=>\7\30\2\2>?\7\13\2\2?@\5\4\3\2@A\7\f\2\2A")
+        buf.write("E\3\2\2\2BC\7\30\2\2CE\5\6\4\2D=\3\2\2\2DB\3\2\2\2E\13")
+        buf.write("\3\2\2\2FG\7\31\2\2GH\7\t\2\2HI\5\24\13\2IJ\7\n\2\2JK")
+        buf.write("\7\13\2\2KL\5\4\3\2LM\7\f\2\2MU\3\2\2\2NO\7\31\2\2OP\7")
+        buf.write("\t\2\2PQ\5\24\13\2QR\7\n\2\2RS\5\6\4\2SU\3\2\2\2TF\3\2")
+        buf.write("\2\2TN\3\2\2\2U\r\3\2\2\2VW\7\32\2\2W\17\3\2\2\2XY\7\17")
+        buf.write("\2\2Y\21\3\2\2\2Z[\7\16\2\2[\\\7\3\2\2\\]\5\24\13\2]\23")
+        buf.write("\3\2\2\2^_\b\13\1\2_`\7\5\2\2`j\5\24\13\nab\7\r\2\2bj")
+        buf.write("\5\24\13\tcd\7\t\2\2de\5\24\13\2ef\7\n\2\2fj\3\2\2\2g")
+        buf.write("j\7\16\2\2hj\7\20\2\2i^\3\2\2\2ia\3\2\2\2ic\3\2\2\2ig")
+        buf.write("\3\2\2\2ih\3\2\2\2jv\3\2\2\2kl\f\7\2\2lm\t\2\2\2mu\5\24")
+        buf.write("\13\bno\f\6\2\2op\t\3\2\2pu\5\24\13\7qr\f\5\2\2rs\t\4")
+        buf.write("\2\2su\5\24\13\6tk\3\2\2\2tn\3\2\2\2tq\3\2\2\2ux\3\2\2")
+        buf.write("\2vt\3\2\2\2vw\3\2\2\2w\25\3\2\2\2xv\3\2\2\2\r\32\34\'")
+        buf.write("\619;DTitv")
         return buf.getvalue()
 
 
@@ -59,13 +61,16 @@ class SimpleMathParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'='", "'+'", "'-'", "'*'", "'/'", "';'", 
-                     "'('", "')'", "'{'", "'}'", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'if'", "'else'", "'while'", "'break'" ]
+                     "'('", "')'", "'{'", "'}'", "'!'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "'=='", "'!='", "'>'", "'>='", "'<'", 
+                     "'<='", "'if'", "'else'", "'while'", "'break'" ]
 
     symbolicNames = [ "<INVALID>", "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", 
                       "DIVIDE", "SEMI", "BRACE_L", "BRACE_R", "CURLY_L", 
-                      "CURLY_R", "VARIABLE", "COMMENT", "NUMBER", "IF", 
-                      "ELSE", "WHILE", "BREAK", "WS" ]
+                      "CURLY_R", "EXCL", "VARIABLE", "COMMENT", "NUMBER", 
+                      "COMPARE_EQ", "COMPARE_NE", "COMPARE_G", "COMPARE_GE", 
+                      "COMPARE_L", "COMPARE_LE", "IF", "ELSE", "WHILE", 
+                      "BREAK", "WS" ]
 
     RULE_script = 0
     RULE_body = 1
@@ -93,14 +98,21 @@ class SimpleMathParser ( Parser ):
     BRACE_R=8
     CURLY_L=9
     CURLY_R=10
-    VARIABLE=11
-    COMMENT=12
-    NUMBER=13
-    IF=14
-    ELSE=15
-    WHILE=16
-    BREAK=17
-    WS=18
+    EXCL=11
+    VARIABLE=12
+    COMMENT=13
+    NUMBER=14
+    COMPARE_EQ=15
+    COMPARE_NE=16
+    COMPARE_G=17
+    COMPARE_GE=18
+    COMPARE_L=19
+    COMPARE_LE=20
+    IF=21
+    ELSE=22
+    WHILE=23
+    BREAK=24
+    WS=25
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -812,6 +824,8 @@ class SimpleMathParser ( Parser ):
             self.left = None # ValueContext
             self.unaryMin = None # Token
             self.right = None # ValueContext
+            self.unaryNot = None # Token
+            self.cmp = None # Token
             self.mul = None # Token
             self.add = None # Token
 
@@ -825,6 +839,9 @@ class SimpleMathParser ( Parser ):
                 return self.getTypedRuleContext(SimpleMathParser.ValueContext,i)
 
 
+        def EXCL(self):
+            return self.getToken(SimpleMathParser.EXCL, 0)
+
         def BRACE_L(self):
             return self.getToken(SimpleMathParser.BRACE_L, 0)
 
@@ -836,6 +853,24 @@ class SimpleMathParser ( Parser ):
 
         def NUMBER(self):
             return self.getToken(SimpleMathParser.NUMBER, 0)
+
+        def COMPARE_EQ(self):
+            return self.getToken(SimpleMathParser.COMPARE_EQ, 0)
+
+        def COMPARE_NE(self):
+            return self.getToken(SimpleMathParser.COMPARE_NE, 0)
+
+        def COMPARE_G(self):
+            return self.getToken(SimpleMathParser.COMPARE_G, 0)
+
+        def COMPARE_GE(self):
+            return self.getToken(SimpleMathParser.COMPARE_GE, 0)
+
+        def COMPARE_L(self):
+            return self.getToken(SimpleMathParser.COMPARE_L, 0)
+
+        def COMPARE_LE(self):
+            return self.getToken(SimpleMathParser.COMPARE_LE, 0)
 
         def MULTIPLY(self):
             return self.getToken(SimpleMathParser.MULTIPLY, 0)
@@ -867,36 +902,42 @@ class SimpleMathParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 101
+            self.state = 103
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [SimpleMathParser.SUBTRACT]:
                 self.state = 93
                 localctx.unaryMin = self.match(SimpleMathParser.SUBTRACT)
                 self.state = 94
-                localctx.right = self.value(6)
+                localctx.right = self.value(8)
+                pass
+            elif token in [SimpleMathParser.EXCL]:
+                self.state = 95
+                localctx.unaryNot = self.match(SimpleMathParser.EXCL)
+                self.state = 96
+                localctx.right = self.value(7)
                 pass
             elif token in [SimpleMathParser.BRACE_L]:
-                self.state = 95
-                self.match(SimpleMathParser.BRACE_L)
-                self.state = 96
-                self.value(0)
                 self.state = 97
+                self.match(SimpleMathParser.BRACE_L)
+                self.state = 98
+                self.value(0)
+                self.state = 99
                 self.match(SimpleMathParser.BRACE_R)
                 pass
             elif token in [SimpleMathParser.VARIABLE]:
-                self.state = 99
+                self.state = 101
                 self.match(SimpleMathParser.VARIABLE)
                 pass
             elif token in [SimpleMathParser.NUMBER]:
-                self.state = 100
+                self.state = 102
                 self.match(SimpleMathParser.NUMBER)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 111
+            self.state = 116
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -904,18 +945,38 @@ class SimpleMathParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 109
+                    self.state = 114
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
                     if la_ == 1:
                         localctx = SimpleMathParser.ValueContext(self, _parentctx, _parentState)
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_value)
-                        self.state = 103
+                        self.state = 105
+                        if not self.precpred(self._ctx, 5):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                        self.state = 106
+                        localctx.cmp = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimpleMathParser.COMPARE_EQ) | (1 << SimpleMathParser.COMPARE_NE) | (1 << SimpleMathParser.COMPARE_G) | (1 << SimpleMathParser.COMPARE_GE) | (1 << SimpleMathParser.COMPARE_L) | (1 << SimpleMathParser.COMPARE_LE))) != 0)):
+                            localctx.cmp = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 107
+                        localctx.right = self.value(6)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = SimpleMathParser.ValueContext(self, _parentctx, _parentState)
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_value)
+                        self.state = 108
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 104
+                        self.state = 109
                         localctx.mul = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==SimpleMathParser.MULTIPLY or _la==SimpleMathParser.DIVIDE):
@@ -923,19 +984,19 @@ class SimpleMathParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 105
+                        self.state = 110
                         localctx.right = self.value(5)
                         pass
 
-                    elif la_ == 2:
+                    elif la_ == 3:
                         localctx = SimpleMathParser.ValueContext(self, _parentctx, _parentState)
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_value)
-                        self.state = 106
+                        self.state = 111
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 107
+                        self.state = 112
                         localctx.add = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==SimpleMathParser.ADD or _la==SimpleMathParser.SUBTRACT):
@@ -943,12 +1004,12 @@ class SimpleMathParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 108
+                        self.state = 113
                         localctx.right = self.value(4)
                         pass
 
              
-                self.state = 113
+                self.state = 118
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 
@@ -974,10 +1035,14 @@ class SimpleMathParser ( Parser ):
 
     def value_sempred(self, localctx:ValueContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 4)
+                return self.precpred(self._ctx, 5)
          
 
             if predIndex == 1:
+                return self.precpred(self._ctx, 4)
+         
+
+            if predIndex == 2:
                 return self.precpred(self._ctx, 3)
          
 

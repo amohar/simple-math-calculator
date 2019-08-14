@@ -1,6 +1,5 @@
 
 # This is a simple test
 
-$haha = 23;
-$bebe = 32 + $haha;
-$iti = $smoja;
+$haha = !23;
+$bebe = 32 > $haha;

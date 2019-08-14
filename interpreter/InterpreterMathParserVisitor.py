@@ -102,15 +102,25 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
             return Value((int)(ctx.NUMBER().symbol.text), ValueType.VALUE)
         elif ctx.unaryMin != None:
             return Calculate(None, OperatorType.UNARYMIN, self.visit(ctx.right))
-        elif ctx.mul != None or ctx.add != None:
+        elif ctx.unaryNot != None:
+            return Calculate(None, OperatorType.UNARYNOT, self.visit(ctx.right))
+        elif ctx.mul != None or ctx.add != None or ctx.cmp != None:
             operators = {
                 "+": OperatorType.ADD,
                 "-": OperatorType.SUBTRACT,
                 "*": OperatorType.MULTIPLY,
-                "/": OperatorType.DIVIDE
+                "/": OperatorType.DIVIDE,
+                "==": OperatorType.COMPARE_EQ,
+                "!=": OperatorType.COMPARE_NE,
+                ">": OperatorType.COMPARE_G,
+                ">=": OperatorType.COMPARE_GE,
+                "<": OperatorType.COMPARE_L,
+                "<=": OperatorType.COMPARE_LE,
             }
             if ctx.mul != None:
                 op = operators[ctx.mul.text]
+            elif ctx.cmp != None:
+                op = operators[ctx.cmp.text]
             else:
                 op = operators[ctx.add.text]
 
