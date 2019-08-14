@@ -24,18 +24,28 @@ class SimpleMathParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleMathParser#if_command.
-    def visitIf_command(self, ctx:SimpleMathParser.If_commandContext):
+    # Visit a parse tree produced by SimpleMathParser#IfCommandBody.
+    def visitIfCommandBody(self, ctx:SimpleMathParser.IfCommandBodyContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleMathParser#while_command.
-    def visitWhile_command(self, ctx:SimpleMathParser.While_commandContext):
+    # Visit a parse tree produced by SimpleMathParser#IfCommandSingle.
+    def visitIfCommandSingle(self, ctx:SimpleMathParser.IfCommandSingleContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleMathParser#break_command.
-    def visitBreak_command(self, ctx:SimpleMathParser.Break_commandContext):
+    # Visit a parse tree produced by SimpleMathParser#WhileCommandBody.
+    def visitWhileCommandBody(self, ctx:SimpleMathParser.WhileCommandBodyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleMathParser#WhileCommandSingle.
+    def visitWhileCommandSingle(self, ctx:SimpleMathParser.WhileCommandSingleContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleMathParser#BreakCommand.
+    def visitBreakCommand(self, ctx:SimpleMathParser.BreakCommandContext):
         return self.visitChildren(ctx)
 
 
@@ -49,18 +59,8 @@ class SimpleMathParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SimpleMathParser#calculate.
-    def visitCalculate(self, ctx:SimpleMathParser.CalculateContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by SimpleMathParser#value.
     def visitValue(self, ctx:SimpleMathParser.ValueContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by SimpleMathParser#number.
-    def visitNumber(self, ctx:SimpleMathParser.NumberContext):
         return self.visitChildren(ctx)
 
 

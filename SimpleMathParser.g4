@@ -9,18 +9,16 @@ command : assign SEMI
         | if_command
         | while_command
         | break_command SEMI;
-if_command : IF BRACE_L value BRACE_R CURLY_L body CURLY_R
-           | IF BRACE_L value BRACE_R command;
-while_command : WHILE BRACE_L value BRACE_R CURLY_L body CURLY_R
-              | WHILE BRACE_L value BRACE_R command;
-break_command : BREAK;
+if_command : IF BRACE_L value BRACE_R CURLY_L body CURLY_R          # IfCommandBody
+           | IF BRACE_L value BRACE_R command                       # IfCommandSingle;
+while_command : WHILE BRACE_L value BRACE_R CURLY_L body CURLY_R    # WhileCommandBody
+              | WHILE BRACE_L value BRACE_R command                 # WhileCommandSingle;
+break_command : BREAK                                               # BreakCommand;
 comment : COMMENT;
-assign : VARIABLE EQUAL value
-       | VARIABLE EQUAL calculate;
-calculate : value ADD value
-          | value SUBTRACT value
-          | value MULTIPLY value
-          | value DIVIDE value;
-value : VARIABLE
-      | number;
-number : NUMBER;
+assign : VARIABLE EQUAL value;
+value : unaryMin=SUBTRACT right=value
+      | BRACE_L value BRACE_R
+      | left=value mul=(MULTIPLY | DIVIDE) right=value
+      | left=value add=(ADD | SUBTRACT) right=value
+      | VARIABLE
+      | NUMBER;

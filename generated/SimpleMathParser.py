@@ -8,39 +8,37 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23")
-        buf.write("p\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\3\2\3\2\3\3\3\3")
-        buf.write("\7\3\35\n\3\f\3\16\3 \13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
-        buf.write("\3\4\5\4*\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\5\5:\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6J\n\6\3\7\3\7\3\b\3\b")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\5\tV\n\t\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\nh\n\n")
-        buf.write("\3\13\3\13\5\13l\n\13\3\f\3\f\3\f\2\2\r\2\4\6\b\n\f\16")
-        buf.write("\20\22\24\26\2\2\2p\2\30\3\2\2\2\4\36\3\2\2\2\6)\3\2\2")
-        buf.write("\2\b9\3\2\2\2\nI\3\2\2\2\fK\3\2\2\2\16M\3\2\2\2\20U\3")
-        buf.write("\2\2\2\22g\3\2\2\2\24k\3\2\2\2\26m\3\2\2\2\30\31\5\4\3")
-        buf.write("\2\31\3\3\2\2\2\32\35\5\6\4\2\33\35\5\16\b\2\34\32\3\2")
-        buf.write("\2\2\34\33\3\2\2\2\35 \3\2\2\2\36\34\3\2\2\2\36\37\3\2")
-        buf.write("\2\2\37\5\3\2\2\2 \36\3\2\2\2!\"\5\20\t\2\"#\7\b\2\2#")
-        buf.write("*\3\2\2\2$*\5\b\5\2%*\5\n\6\2&\'\5\f\7\2\'(\7\b\2\2(*")
-        buf.write("\3\2\2\2)!\3\2\2\2)$\3\2\2\2)%\3\2\2\2)&\3\2\2\2*\7\3")
-        buf.write("\2\2\2+,\7\20\2\2,-\7\t\2\2-.\5\24\13\2./\7\n\2\2/\60")
-        buf.write("\7\13\2\2\60\61\5\4\3\2\61\62\7\f\2\2\62:\3\2\2\2\63\64")
-        buf.write("\7\20\2\2\64\65\7\t\2\2\65\66\5\24\13\2\66\67\7\n\2\2")
-        buf.write("\678\5\6\4\28:\3\2\2\29+\3\2\2\29\63\3\2\2\2:\t\3\2\2")
-        buf.write("\2;<\7\21\2\2<=\7\t\2\2=>\5\24\13\2>?\7\n\2\2?@\7\13\2")
-        buf.write("\2@A\5\4\3\2AB\7\f\2\2BJ\3\2\2\2CD\7\21\2\2DE\7\t\2\2")
-        buf.write("EF\5\24\13\2FG\7\n\2\2GH\5\6\4\2HJ\3\2\2\2I;\3\2\2\2I")
-        buf.write("C\3\2\2\2J\13\3\2\2\2KL\7\22\2\2L\r\3\2\2\2MN\7\16\2\2")
-        buf.write("N\17\3\2\2\2OP\7\r\2\2PQ\7\3\2\2QV\5\24\13\2RS\7\r\2\2")
-        buf.write("ST\7\3\2\2TV\5\22\n\2UO\3\2\2\2UR\3\2\2\2V\21\3\2\2\2")
-        buf.write("WX\5\24\13\2XY\7\4\2\2YZ\5\24\13\2Zh\3\2\2\2[\\\5\24\13")
-        buf.write("\2\\]\7\5\2\2]^\5\24\13\2^h\3\2\2\2_`\5\24\13\2`a\7\6")
-        buf.write("\2\2ab\5\24\13\2bh\3\2\2\2cd\5\24\13\2de\7\7\2\2ef\5\24")
-        buf.write("\13\2fh\3\2\2\2gW\3\2\2\2g[\3\2\2\2g_\3\2\2\2gc\3\2\2")
-        buf.write("\2h\23\3\2\2\2il\7\r\2\2jl\5\26\f\2ki\3\2\2\2kj\3\2\2")
-        buf.write("\2l\25\3\2\2\2mn\7\17\2\2n\27\3\2\2\2\n\34\36)9IUgk")
+        buf.write("f\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3\3\3\3\7\3\31\n\3\f\3\16")
+        buf.write("\3\34\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4&\n\4\3")
+        buf.write("\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
+        buf.write("\5\5\66\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
+        buf.write("\6\3\6\3\6\3\6\5\6F\n\6\3\7\3\7\3\b\3\b\3\t\3\t\3\t\3")
+        buf.write("\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\nY\n\n\3\n\3")
+        buf.write("\n\3\n\3\n\3\n\3\n\7\na\n\n\f\n\16\nd\13\n\3\n\2\3\22")
+        buf.write("\13\2\4\6\b\n\f\16\20\22\2\4\3\2\6\7\3\2\4\5\2h\2\24\3")
+        buf.write("\2\2\2\4\32\3\2\2\2\6%\3\2\2\2\b\65\3\2\2\2\nE\3\2\2\2")
+        buf.write("\fG\3\2\2\2\16I\3\2\2\2\20K\3\2\2\2\22X\3\2\2\2\24\25")
+        buf.write("\5\4\3\2\25\3\3\2\2\2\26\31\5\6\4\2\27\31\5\16\b\2\30")
+        buf.write("\26\3\2\2\2\30\27\3\2\2\2\31\34\3\2\2\2\32\30\3\2\2\2")
+        buf.write("\32\33\3\2\2\2\33\5\3\2\2\2\34\32\3\2\2\2\35\36\5\20\t")
+        buf.write("\2\36\37\7\b\2\2\37&\3\2\2\2 &\5\b\5\2!&\5\n\6\2\"#\5")
+        buf.write("\f\7\2#$\7\b\2\2$&\3\2\2\2%\35\3\2\2\2% \3\2\2\2%!\3\2")
+        buf.write("\2\2%\"\3\2\2\2&\7\3\2\2\2\'(\7\20\2\2()\7\t\2\2)*\5\22")
+        buf.write("\n\2*+\7\n\2\2+,\7\13\2\2,-\5\4\3\2-.\7\f\2\2.\66\3\2")
+        buf.write("\2\2/\60\7\20\2\2\60\61\7\t\2\2\61\62\5\22\n\2\62\63\7")
+        buf.write("\n\2\2\63\64\5\6\4\2\64\66\3\2\2\2\65\'\3\2\2\2\65/\3")
+        buf.write("\2\2\2\66\t\3\2\2\2\678\7\21\2\289\7\t\2\29:\5\22\n\2")
+        buf.write(":;\7\n\2\2;<\7\13\2\2<=\5\4\3\2=>\7\f\2\2>F\3\2\2\2?@")
+        buf.write("\7\21\2\2@A\7\t\2\2AB\5\22\n\2BC\7\n\2\2CD\5\6\4\2DF\3")
+        buf.write("\2\2\2E\67\3\2\2\2E?\3\2\2\2F\13\3\2\2\2GH\7\22\2\2H\r")
+        buf.write("\3\2\2\2IJ\7\16\2\2J\17\3\2\2\2KL\7\r\2\2LM\7\3\2\2MN")
+        buf.write("\5\22\n\2N\21\3\2\2\2OP\b\n\1\2PQ\7\5\2\2QY\5\22\n\bR")
+        buf.write("S\7\t\2\2ST\5\22\n\2TU\7\n\2\2UY\3\2\2\2VY\7\r\2\2WY\7")
+        buf.write("\17\2\2XO\3\2\2\2XR\3\2\2\2XV\3\2\2\2XW\3\2\2\2Yb\3\2")
+        buf.write("\2\2Z[\f\6\2\2[\\\t\2\2\2\\a\5\22\n\7]^\f\5\2\2^_\t\3")
+        buf.write("\2\2_a\5\22\n\6`Z\3\2\2\2`]\3\2\2\2ad\3\2\2\2b`\3\2\2")
+        buf.write("\2bc\3\2\2\2c\23\3\2\2\2db\3\2\2\2\n\30\32%\65EX`b")
         return buf.getvalue()
 
 
@@ -71,13 +69,10 @@ class SimpleMathParser ( Parser ):
     RULE_break_command = 5
     RULE_comment = 6
     RULE_assign = 7
-    RULE_calculate = 8
-    RULE_value = 9
-    RULE_number = 10
+    RULE_value = 8
 
     ruleNames =  [ "script", "body", "command", "if_command", "while_command", 
-                   "break_command", "comment", "assign", "calculate", "value", 
-                   "number" ]
+                   "break_command", "comment", "assign", "value" ]
 
     EOF = Token.EOF
     EQUAL=1
@@ -119,14 +114,6 @@ class SimpleMathParser ( Parser ):
         def getRuleIndex(self):
             return SimpleMathParser.RULE_script
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterScript" ):
-                listener.enterScript(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitScript" ):
-                listener.exitScript(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitScript" ):
                 return visitor.visitScript(self)
@@ -142,7 +129,7 @@ class SimpleMathParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_script)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 22
+            self.state = 18
             self.body()
         except RecognitionException as re:
             localctx.exception = re
@@ -175,14 +162,6 @@ class SimpleMathParser ( Parser ):
         def getRuleIndex(self):
             return SimpleMathParser.RULE_body
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBody" ):
-                listener.enterBody(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBody" ):
-                listener.exitBody(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBody" ):
                 return visitor.visitBody(self)
@@ -199,25 +178,25 @@ class SimpleMathParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 28
+            self.state = 24
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimpleMathParser.VARIABLE) | (1 << SimpleMathParser.COMMENT) | (1 << SimpleMathParser.IF) | (1 << SimpleMathParser.WHILE) | (1 << SimpleMathParser.BREAK))) != 0):
-                self.state = 26
+                self.state = 22
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [SimpleMathParser.VARIABLE, SimpleMathParser.IF, SimpleMathParser.WHILE, SimpleMathParser.BREAK]:
-                    self.state = 24
+                    self.state = 20
                     self.command()
                     pass
                 elif token in [SimpleMathParser.COMMENT]:
-                    self.state = 25
+                    self.state = 21
                     self.comment()
                     pass
                 else:
                     raise NoViableAltException(self)
 
-                self.state = 30
+                self.state = 26
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -257,14 +236,6 @@ class SimpleMathParser ( Parser ):
         def getRuleIndex(self):
             return SimpleMathParser.RULE_command
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCommand" ):
-                listener.enterCommand(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCommand" ):
-                listener.exitCommand(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCommand" ):
                 return visitor.visitCommand(self)
@@ -279,31 +250,31 @@ class SimpleMathParser ( Parser ):
         localctx = SimpleMathParser.CommandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_command)
         try:
-            self.state = 39
+            self.state = 35
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [SimpleMathParser.VARIABLE]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 31
+                self.state = 27
                 self.assign()
-                self.state = 32
+                self.state = 28
                 self.match(SimpleMathParser.SEMI)
                 pass
             elif token in [SimpleMathParser.IF]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 34
+                self.state = 30
                 self.if_command()
                 pass
             elif token in [SimpleMathParser.WHILE]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 35
+                self.state = 31
                 self.while_command()
                 pass
             elif token in [SimpleMathParser.BREAK]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 36
+                self.state = 32
                 self.break_command()
-                self.state = 37
+                self.state = 33
                 self.match(SimpleMathParser.SEMI)
                 pass
             else:
@@ -323,50 +294,70 @@ class SimpleMathParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def IF(self):
-            return self.getToken(SimpleMathParser.IF, 0)
-
-        def BRACE_L(self):
-            return self.getToken(SimpleMathParser.BRACE_L, 0)
-
-        def value(self):
-            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
-
-
-        def BRACE_R(self):
-            return self.getToken(SimpleMathParser.BRACE_R, 0)
-
-        def CURLY_L(self):
-            return self.getToken(SimpleMathParser.CURLY_L, 0)
-
-        def body(self):
-            return self.getTypedRuleContext(SimpleMathParser.BodyContext,0)
-
-
-        def CURLY_R(self):
-            return self.getToken(SimpleMathParser.CURLY_R, 0)
-
-        def command(self):
-            return self.getTypedRuleContext(SimpleMathParser.CommandContext,0)
-
 
         def getRuleIndex(self):
             return SimpleMathParser.RULE_if_command
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIf_command" ):
-                listener.enterIf_command(self)
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIf_command" ):
-                listener.exitIf_command(self)
+
+
+    class IfCommandSingleContext(If_commandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a SimpleMathParser.If_commandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def IF(self):
+            return self.getToken(SimpleMathParser.IF, 0)
+        def BRACE_L(self):
+            return self.getToken(SimpleMathParser.BRACE_L, 0)
+        def value(self):
+            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
+
+        def BRACE_R(self):
+            return self.getToken(SimpleMathParser.BRACE_R, 0)
+        def command(self):
+            return self.getTypedRuleContext(SimpleMathParser.CommandContext,0)
+
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitIf_command" ):
-                return visitor.visitIf_command(self)
+            if hasattr( visitor, "visitIfCommandSingle" ):
+                return visitor.visitIfCommandSingle(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class IfCommandBodyContext(If_commandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a SimpleMathParser.If_commandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def IF(self):
+            return self.getToken(SimpleMathParser.IF, 0)
+        def BRACE_L(self):
+            return self.getToken(SimpleMathParser.BRACE_L, 0)
+        def value(self):
+            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
+
+        def BRACE_R(self):
+            return self.getToken(SimpleMathParser.BRACE_R, 0)
+        def CURLY_L(self):
+            return self.getToken(SimpleMathParser.CURLY_L, 0)
+        def body(self):
+            return self.getTypedRuleContext(SimpleMathParser.BodyContext,0)
+
+        def CURLY_R(self):
+            return self.getToken(SimpleMathParser.CURLY_R, 0)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfCommandBody" ):
+                return visitor.visitIfCommandBody(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -375,38 +366,40 @@ class SimpleMathParser ( Parser ):
         localctx = SimpleMathParser.If_commandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_if_command)
         try:
-            self.state = 55
+            self.state = 51
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
+                localctx = SimpleMathParser.IfCommandBodyContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 41
+                self.state = 37
                 self.match(SimpleMathParser.IF)
-                self.state = 42
+                self.state = 38
                 self.match(SimpleMathParser.BRACE_L)
-                self.state = 43
-                self.value()
-                self.state = 44
+                self.state = 39
+                self.value(0)
+                self.state = 40
                 self.match(SimpleMathParser.BRACE_R)
-                self.state = 45
+                self.state = 41
                 self.match(SimpleMathParser.CURLY_L)
-                self.state = 46
+                self.state = 42
                 self.body()
-                self.state = 47
+                self.state = 43
                 self.match(SimpleMathParser.CURLY_R)
                 pass
 
             elif la_ == 2:
+                localctx = SimpleMathParser.IfCommandSingleContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 49
+                self.state = 45
                 self.match(SimpleMathParser.IF)
-                self.state = 50
+                self.state = 46
                 self.match(SimpleMathParser.BRACE_L)
-                self.state = 51
-                self.value()
-                self.state = 52
+                self.state = 47
+                self.value(0)
+                self.state = 48
                 self.match(SimpleMathParser.BRACE_R)
-                self.state = 53
+                self.state = 49
                 self.command()
                 pass
 
@@ -425,50 +418,70 @@ class SimpleMathParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WHILE(self):
-            return self.getToken(SimpleMathParser.WHILE, 0)
-
-        def BRACE_L(self):
-            return self.getToken(SimpleMathParser.BRACE_L, 0)
-
-        def value(self):
-            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
-
-
-        def BRACE_R(self):
-            return self.getToken(SimpleMathParser.BRACE_R, 0)
-
-        def CURLY_L(self):
-            return self.getToken(SimpleMathParser.CURLY_L, 0)
-
-        def body(self):
-            return self.getTypedRuleContext(SimpleMathParser.BodyContext,0)
-
-
-        def CURLY_R(self):
-            return self.getToken(SimpleMathParser.CURLY_R, 0)
-
-        def command(self):
-            return self.getTypedRuleContext(SimpleMathParser.CommandContext,0)
-
 
         def getRuleIndex(self):
             return SimpleMathParser.RULE_while_command
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWhile_command" ):
-                listener.enterWhile_command(self)
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWhile_command" ):
-                listener.exitWhile_command(self)
+
+
+    class WhileCommandSingleContext(While_commandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a SimpleMathParser.While_commandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def WHILE(self):
+            return self.getToken(SimpleMathParser.WHILE, 0)
+        def BRACE_L(self):
+            return self.getToken(SimpleMathParser.BRACE_L, 0)
+        def value(self):
+            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
+
+        def BRACE_R(self):
+            return self.getToken(SimpleMathParser.BRACE_R, 0)
+        def command(self):
+            return self.getTypedRuleContext(SimpleMathParser.CommandContext,0)
+
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitWhile_command" ):
-                return visitor.visitWhile_command(self)
+            if hasattr( visitor, "visitWhileCommandSingle" ):
+                return visitor.visitWhileCommandSingle(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class WhileCommandBodyContext(While_commandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a SimpleMathParser.While_commandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def WHILE(self):
+            return self.getToken(SimpleMathParser.WHILE, 0)
+        def BRACE_L(self):
+            return self.getToken(SimpleMathParser.BRACE_L, 0)
+        def value(self):
+            return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
+
+        def BRACE_R(self):
+            return self.getToken(SimpleMathParser.BRACE_R, 0)
+        def CURLY_L(self):
+            return self.getToken(SimpleMathParser.CURLY_L, 0)
+        def body(self):
+            return self.getTypedRuleContext(SimpleMathParser.BodyContext,0)
+
+        def CURLY_R(self):
+            return self.getToken(SimpleMathParser.CURLY_R, 0)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhileCommandBody" ):
+                return visitor.visitWhileCommandBody(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -477,38 +490,40 @@ class SimpleMathParser ( Parser ):
         localctx = SimpleMathParser.While_commandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_while_command)
         try:
-            self.state = 71
+            self.state = 67
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
+                localctx = SimpleMathParser.WhileCommandBodyContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 57
+                self.state = 53
                 self.match(SimpleMathParser.WHILE)
-                self.state = 58
+                self.state = 54
                 self.match(SimpleMathParser.BRACE_L)
-                self.state = 59
-                self.value()
-                self.state = 60
+                self.state = 55
+                self.value(0)
+                self.state = 56
                 self.match(SimpleMathParser.BRACE_R)
-                self.state = 61
+                self.state = 57
                 self.match(SimpleMathParser.CURLY_L)
-                self.state = 62
+                self.state = 58
                 self.body()
-                self.state = 63
+                self.state = 59
                 self.match(SimpleMathParser.CURLY_R)
                 pass
 
             elif la_ == 2:
+                localctx = SimpleMathParser.WhileCommandSingleContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 65
+                self.state = 61
                 self.match(SimpleMathParser.WHILE)
-                self.state = 66
+                self.state = 62
                 self.match(SimpleMathParser.BRACE_L)
-                self.state = 67
-                self.value()
-                self.state = 68
+                self.state = 63
+                self.value(0)
+                self.state = 64
                 self.match(SimpleMathParser.BRACE_R)
-                self.state = 69
+                self.state = 65
                 self.command()
                 pass
 
@@ -527,26 +542,30 @@ class SimpleMathParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def BREAK(self):
-            return self.getToken(SimpleMathParser.BREAK, 0)
 
         def getRuleIndex(self):
             return SimpleMathParser.RULE_break_command
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBreak_command" ):
-                listener.enterBreak_command(self)
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBreak_command" ):
-                listener.exitBreak_command(self)
+
+
+    class BreakCommandContext(Break_commandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a SimpleMathParser.Break_commandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def BREAK(self):
+            return self.getToken(SimpleMathParser.BREAK, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitBreak_command" ):
-                return visitor.visitBreak_command(self)
+            if hasattr( visitor, "visitBreakCommand" ):
+                return visitor.visitBreakCommand(self)
             else:
                 return visitor.visitChildren(self)
-
 
 
 
@@ -555,8 +574,9 @@ class SimpleMathParser ( Parser ):
         localctx = SimpleMathParser.Break_commandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_break_command)
         try:
+            localctx = SimpleMathParser.BreakCommandContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
-            self.state = 73
+            self.state = 69
             self.match(SimpleMathParser.BREAK)
         except RecognitionException as re:
             localctx.exception = re
@@ -578,14 +598,6 @@ class SimpleMathParser ( Parser ):
         def getRuleIndex(self):
             return SimpleMathParser.RULE_comment
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComment" ):
-                listener.enterComment(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComment" ):
-                listener.exitComment(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitComment" ):
                 return visitor.visitComment(self)
@@ -601,7 +613,7 @@ class SimpleMathParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_comment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 75
+            self.state = 71
             self.match(SimpleMathParser.COMMENT)
         except RecognitionException as re:
             localctx.exception = re
@@ -627,20 +639,8 @@ class SimpleMathParser ( Parser ):
             return self.getTypedRuleContext(SimpleMathParser.ValueContext,0)
 
 
-        def calculate(self):
-            return self.getTypedRuleContext(SimpleMathParser.CalculateContext,0)
-
-
         def getRuleIndex(self):
             return SimpleMathParser.RULE_assign
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssign" ):
-                listener.enterAssign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssign" ):
-                listener.exitAssign(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAssign" ):
@@ -656,132 +656,13 @@ class SimpleMathParser ( Parser ):
         localctx = SimpleMathParser.AssignContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_assign)
         try:
-            self.state = 83
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 77
-                self.match(SimpleMathParser.VARIABLE)
-                self.state = 78
-                self.match(SimpleMathParser.EQUAL)
-                self.state = 79
-                self.value()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 80
-                self.match(SimpleMathParser.VARIABLE)
-                self.state = 81
-                self.match(SimpleMathParser.EQUAL)
-                self.state = 82
-                self.calculate()
-                pass
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class CalculateContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def value(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(SimpleMathParser.ValueContext)
-            else:
-                return self.getTypedRuleContext(SimpleMathParser.ValueContext,i)
-
-
-        def ADD(self):
-            return self.getToken(SimpleMathParser.ADD, 0)
-
-        def SUBTRACT(self):
-            return self.getToken(SimpleMathParser.SUBTRACT, 0)
-
-        def MULTIPLY(self):
-            return self.getToken(SimpleMathParser.MULTIPLY, 0)
-
-        def DIVIDE(self):
-            return self.getToken(SimpleMathParser.DIVIDE, 0)
-
-        def getRuleIndex(self):
-            return SimpleMathParser.RULE_calculate
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCalculate" ):
-                listener.enterCalculate(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCalculate" ):
-                listener.exitCalculate(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCalculate" ):
-                return visitor.visitCalculate(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def calculate(self):
-
-        localctx = SimpleMathParser.CalculateContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_calculate)
-        try:
-            self.state = 101
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 85
-                self.value()
-                self.state = 86
-                self.match(SimpleMathParser.ADD)
-                self.state = 87
-                self.value()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 89
-                self.value()
-                self.state = 90
-                self.match(SimpleMathParser.SUBTRACT)
-                self.state = 91
-                self.value()
-                pass
-
-            elif la_ == 3:
-                self.enterOuterAlt(localctx, 3)
-                self.state = 93
-                self.value()
-                self.state = 94
-                self.match(SimpleMathParser.MULTIPLY)
-                self.state = 95
-                self.value()
-                pass
-
-            elif la_ == 4:
-                self.enterOuterAlt(localctx, 4)
-                self.state = 97
-                self.value()
-                self.state = 98
-                self.match(SimpleMathParser.DIVIDE)
-                self.state = 99
-                self.value()
-                pass
-
-
+            self.enterOuterAlt(localctx, 1)
+            self.state = 73
+            self.match(SimpleMathParser.VARIABLE)
+            self.state = 74
+            self.match(SimpleMathParser.EQUAL)
+            self.state = 75
+            self.value(0)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -795,24 +676,45 @@ class SimpleMathParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.left = None # ValueContext
+            self.unaryMin = None # Token
+            self.right = None # ValueContext
+            self.mul = None # Token
+            self.add = None # Token
+
+        def SUBTRACT(self):
+            return self.getToken(SimpleMathParser.SUBTRACT, 0)
+
+        def value(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(SimpleMathParser.ValueContext)
+            else:
+                return self.getTypedRuleContext(SimpleMathParser.ValueContext,i)
+
+
+        def BRACE_L(self):
+            return self.getToken(SimpleMathParser.BRACE_L, 0)
+
+        def BRACE_R(self):
+            return self.getToken(SimpleMathParser.BRACE_R, 0)
 
         def VARIABLE(self):
             return self.getToken(SimpleMathParser.VARIABLE, 0)
 
-        def number(self):
-            return self.getTypedRuleContext(SimpleMathParser.NumberContext,0)
+        def NUMBER(self):
+            return self.getToken(SimpleMathParser.NUMBER, 0)
 
+        def MULTIPLY(self):
+            return self.getToken(SimpleMathParser.MULTIPLY, 0)
+
+        def DIVIDE(self):
+            return self.getToken(SimpleMathParser.DIVIDE, 0)
+
+        def ADD(self):
+            return self.getToken(SimpleMathParser.ADD, 0)
 
         def getRuleIndex(self):
             return SimpleMathParser.RULE_value
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterValue" ):
-                listener.enterValue(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitValue" ):
-                listener.exitValue(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitValue" ):
@@ -822,81 +724,129 @@ class SimpleMathParser ( Parser ):
 
 
 
-
-    def value(self):
-
-        localctx = SimpleMathParser.ValueContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_value)
+    def value(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = SimpleMathParser.ValueContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 16
+        self.enterRecursionRule(localctx, 16, self.RULE_value, _p)
+        self._la = 0 # Token type
         try:
-            self.state = 105
+            self.enterOuterAlt(localctx, 1)
+            self.state = 86
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SimpleMathParser.VARIABLE]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 103
+            if token in [SimpleMathParser.SUBTRACT]:
+                self.state = 78
+                localctx.unaryMin = self.match(SimpleMathParser.SUBTRACT)
+                self.state = 79
+                localctx.right = self.value(6)
+                pass
+            elif token in [SimpleMathParser.BRACE_L]:
+                self.state = 80
+                self.match(SimpleMathParser.BRACE_L)
+                self.state = 81
+                self.value(0)
+                self.state = 82
+                self.match(SimpleMathParser.BRACE_R)
+                pass
+            elif token in [SimpleMathParser.VARIABLE]:
+                self.state = 84
                 self.match(SimpleMathParser.VARIABLE)
                 pass
             elif token in [SimpleMathParser.NUMBER]:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 104
-                self.number()
+                self.state = 85
+                self.match(SimpleMathParser.NUMBER)
                 pass
             else:
                 raise NoViableAltException(self)
 
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 96
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    self.state = 94
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+                    if la_ == 1:
+                        localctx = SimpleMathParser.ValueContext(self, _parentctx, _parentState)
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_value)
+                        self.state = 88
+                        if not self.precpred(self._ctx, 4):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                        self.state = 89
+                        localctx.mul = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not(_la==SimpleMathParser.MULTIPLY or _la==SimpleMathParser.DIVIDE):
+                            localctx.mul = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 90
+                        localctx.right = self.value(5)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = SimpleMathParser.ValueContext(self, _parentctx, _parentState)
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_value)
+                        self.state = 91
+                        if not self.precpred(self._ctx, 3):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                        self.state = 92
+                        localctx.add = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not(_la==SimpleMathParser.ADD or _la==SimpleMathParser.SUBTRACT):
+                            localctx.add = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 93
+                        localctx.right = self.value(4)
+                        pass
+
+             
+                self.state = 98
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.exitRule()
+            self.unrollRecursionContexts(_parentctx)
         return localctx
 
-    class NumberContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def NUMBER(self):
-            return self.getToken(SimpleMathParser.NUMBER, 0)
-
-        def getRuleIndex(self):
-            return SimpleMathParser.RULE_number
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNumber" ):
-                listener.enterNumber(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNumber" ):
-                listener.exitNumber(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNumber" ):
-                return visitor.visitNumber(self)
-            else:
-                return visitor.visitChildren(self)
 
 
+    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
+        if self._predicates == None:
+            self._predicates = dict()
+        self._predicates[8] = self.value_sempred
+        pred = self._predicates.get(ruleIndex, None)
+        if pred is None:
+            raise Exception("No predicate with index:" + str(ruleIndex))
+        else:
+            return pred(localctx, predIndex)
 
+    def value_sempred(self, localctx:ValueContext, predIndex:int):
+            if predIndex == 0:
+                return self.precpred(self._ctx, 4)
+         
 
-    def number(self):
-
-        localctx = SimpleMathParser.NumberContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_number)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 107
-            self.match(SimpleMathParser.NUMBER)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
+            if predIndex == 1:
+                return self.precpred(self._ctx, 3)
+         
 
 
 
