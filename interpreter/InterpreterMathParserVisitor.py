@@ -73,12 +73,12 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
 
     # Visit a parse tree produced by SimpleMathParser#WhileCommandBody.
     def visitWhileCommandBody(self, ctx:SimpleMathParser.WhileCommandBodyContext):
-        return self.visitChildren(ctx)
+        return WhileCommand(self.visit(ctx.value()), self.visit(ctx.body()))
 
 
     # Visit a parse tree produced by SimpleMathParser#WhileCommandSingle.
     def visitWhileCommandSingle(self, ctx:SimpleMathParser.WhileCommandSingleContext):
-        return self.visitChildren(ctx)
+        return WhileCommand(self.visit(ctx.value()), self.visit(ctx.command()))
 
 
     # Visit a parse tree produced by SimpleMathParser#BreakCommand.

@@ -11,11 +11,11 @@ command : assign SEMI
         | break_command SEMI;
 if_command : IF BRACE_L value BRACE_R CURLY_L body CURLY_R (elseBody=else_command)?    # IfCommandBody
            | IF BRACE_L value BRACE_R command (elseBody=else_command)?                 # IfCommandSingle;
-else_command : ELSE CURLY_L elseBody=body CURLY_R                                    # ElseCommandBody
-             | ELSE elseLine=command                                                 # ElseCommandSingle;
-while_command : WHILE BRACE_L value BRACE_R CURLY_L body CURLY_R                     # WhileCommandBody
-              | WHILE BRACE_L value BRACE_R command                                  # WhileCommandSingle;
-break_command : BREAK                                                                # BreakCommand;
+else_command : ELSE CURLY_L elseBody=body CURLY_R                                      # ElseCommandBody
+             | ELSE elseLine=command                                                   # ElseCommandSingle;
+while_command : WHILE BRACE_L value BRACE_R CURLY_L body CURLY_R                       # WhileCommandBody
+              | WHILE BRACE_L value BRACE_R command                                    # WhileCommandSingle;
+break_command : BREAK                                                                  # BreakCommand;
 comment : COMMENT;
 assign : VARIABLE EQUAL value;
 

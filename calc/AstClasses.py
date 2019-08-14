@@ -9,6 +9,11 @@ class IfCommand(object):
         self.body = body
         self.elseBody = elseBody
 
+class WhileCommand(object):
+    def __init__(self, condition, body):
+        self.condition = condition
+        self.body = body
+
 class Value(object):
     def __init__(self, value, type):
         self.value = value
