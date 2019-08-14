@@ -17,7 +17,7 @@ def main(argv):
     astTree = visitor.visit(tree)
     calculator = Calculator()
     calculator.calculate(astTree)
-    
+
     print(astTree)
 
 if __name__ == '__main__':

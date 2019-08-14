@@ -3,3 +3,7 @@
 
 $haha = !23;
 $bebe = 32 > $haha;
+
+print("haha");
+print("test", $haha, " test more ", 1 + $bebe);
+print();

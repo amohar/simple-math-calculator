@@ -86,6 +86,24 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         return BreakCommand()
 
 
+# Visit a parse tree produced by SimpleMathParser#PrintCommand.
+    def visitPrintCommand(self, ctx:SimpleMathParser.PrintCommandContext):
+        params = self.visit(ctx.print_params()) if ctx.print_params() else []
+        return PrintCommand(params)
+
+
+    # Visit a parse tree produced by SimpleMathParser#print_params.
+    def visitPrint_params(self, ctx:SimpleMathParser.Print_paramsContext):
+        result = []
+        for item in ctx.children:
+            if type(item) == SimpleMathParser.ValueContext:
+                result.append(self.visitValue(item))
+            if hasattr(item, "symbol") and item.symbol.type == SimpleMathParser.PRINT_STR:
+                result.append(item.symbol.text[1:-1])
+
+        return result
+
+
     # Visit a parse tree produced by SimpleMathParser#assign.
     def visitAssign(self, ctx:SimpleMathParser.AssignContext):
         if (ctx.value() != None):
