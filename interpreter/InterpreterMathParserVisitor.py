@@ -48,11 +48,26 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
 
     # Visit a parse tree produced by SimpleMathParser#IfCommandBody.
     def visitIfCommandBody(self, ctx:SimpleMathParser.IfCommandBodyContext):
-        return IfCommand(self.visit(ctx.value()), self.visit(ctx.body()))
-
+        if ctx.elseBody != None:
+            return IfCommand(self.visit(ctx.value()), self.visit(ctx.body()), self.visit(ctx.elseBody))
+        else:
+            return IfCommand(self.visit(ctx.value()), self.visit(ctx.body()))
 
     # Visit a parse tree produced by SimpleMathParser#IfCommandSingle.
     def visitIfCommandSingle(self, ctx:SimpleMathParser.IfCommandSingleContext):
+        if ctx.elseBody != None:
+            return IfCommand(self.visit(ctx.value()), self.visit(ctx.command()), self.visit(ctx.elseBody))
+        else:
+            return IfCommand(self.visit(ctx.value()), self.visit(ctx.command()))
+
+
+    # Visit a parse tree produced by SimpleMathParser#ElseCommandBody.
+    def visitElseCommandBody(self, ctx:SimpleMathParser.ElseCommandBodyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleMathParser#ElseCommandSingle.
+    def visitElseCommandSingle(self, ctx:SimpleMathParser.ElseCommandSingleContext):
         return self.visitChildren(ctx)
 
 

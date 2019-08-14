@@ -16,6 +16,7 @@ COMMENT: '#' ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-'|' ')*;
 NUMBER: DIGIT+ (DOT DIGIT+)?;
 
 IF: 'if';
+ELSE: 'else';
 WHILE: 'while';
 BREAK: 'break';
 WS: [ \n\t\r]+ -> skip;
