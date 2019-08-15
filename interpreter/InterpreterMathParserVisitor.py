@@ -86,22 +86,9 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         return BreakCommand()
 
 
-# Visit a parse tree produced by SimpleMathParser#PrintCommand.
+    # Visit a parse tree produced by SimpleMathParser#PrintCommand.
     def visitPrintCommand(self, ctx:SimpleMathParser.PrintCommandContext):
-        params = self.visit(ctx.print_params()) if ctx.print_params() else []
-        return PrintCommand(params)
-
-
-    # Visit a parse tree produced by SimpleMathParser#print_params.
-    def visitPrint_params(self, ctx:SimpleMathParser.Print_paramsContext):
-        result = []
-        for item in ctx.children:
-            if type(item) == SimpleMathParser.ValueContext:
-                result.append(self.visitValue(item))
-            if hasattr(item, "symbol") and item.symbol.type == SimpleMathParser.PRINT_STR:
-                result.append(item.symbol.text[1:-1])
-
-        return result
+        return PrintCommand(self.visit(ctx.value()))
 
 
     # Visit a parse tree produced by SimpleMathParser#assign.
@@ -117,11 +104,15 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         if ctx.VARIABLE() != None:
             return Value(ctx.VARIABLE().symbol.text, ValueType.VARIABLE)
         elif ctx.NUMBER() != None:
-            return Value((int)(ctx.NUMBER().symbol.text), ValueType.VALUE)
+            return Value((int)(ctx.NUMBER().symbol.text), ValueType.NUMCONST)
+        elif ctx.STR() != None:
+            return Value(ctx.STR().symbol.text[1:-1], ValueType.STRCONST)
         elif ctx.unaryMin != None:
             return Calculate(None, OperatorType.UNARYMIN, self.visit(ctx.right))
         elif ctx.unaryNot != None:
             return Calculate(None, OperatorType.UNARYNOT, self.visit(ctx.right))
+        elif ctx.bracedValue != None:
+            return self.visit(ctx.bracedValue)
         elif ctx.mul != None or ctx.add != None or ctx.cmp != None:
             operators = {
                 "+": OperatorType.ADD,

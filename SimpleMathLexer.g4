@@ -16,7 +16,7 @@ COMMA: ',';
 VARIABLE: '$' ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-')+;
 COMMENT: '#' ('0'..'9'|'a'..'z'|'A'..'Z'|'_'|'-'|' ')*;
 NUMBER: DIGIT+ (DOT DIGIT+)?;
-PRINT_STR: '"' .*? '"';
+STR: '"' .*? '"';
 
 COMPARE_EQ: '==';
 COMPARE_NE: '!=';

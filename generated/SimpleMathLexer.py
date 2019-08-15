@@ -96,7 +96,7 @@ class SimpleMathLexer(Lexer):
     VARIABLE = 13
     COMMENT = 14
     NUMBER = 15
-    PRINT_STR = 16
+    STR = 16
     COMPARE_EQ = 17
     COMPARE_NE = 18
     COMPARE_G = 19
@@ -122,13 +122,13 @@ class SimpleMathLexer(Lexer):
     symbolicNames = [ "<INVALID>",
             "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "SEMI", "BRACE_L", 
             "BRACE_R", "CURLY_L", "CURLY_R", "EXCL", "COMMA", "VARIABLE", 
-            "COMMENT", "NUMBER", "PRINT_STR", "COMPARE_EQ", "COMPARE_NE", 
-            "COMPARE_G", "COMPARE_GE", "COMPARE_L", "COMPARE_LE", "IF", 
-            "ELSE", "WHILE", "BREAK", "PRINT", "WS" ]
+            "COMMENT", "NUMBER", "STR", "COMPARE_EQ", "COMPARE_NE", "COMPARE_G", 
+            "COMPARE_GE", "COMPARE_L", "COMPARE_LE", "IF", "ELSE", "WHILE", 
+            "BREAK", "PRINT", "WS" ]
 
     ruleNames = [ "EQUAL", "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "SEMI", 
                   "BRACE_L", "BRACE_R", "CURLY_L", "CURLY_R", "EXCL", "COMMA", 
-                  "VARIABLE", "COMMENT", "NUMBER", "PRINT_STR", "COMPARE_EQ", 
+                  "VARIABLE", "COMMENT", "NUMBER", "STR", "COMPARE_EQ", 
                   "COMPARE_NE", "COMPARE_G", "COMPARE_GE", "COMPARE_L", 
                   "COMPARE_LE", "IF", "ELSE", "WHILE", "BREAK", "PRINT", 
                   "WS", "DIGIT", "DOT" ]

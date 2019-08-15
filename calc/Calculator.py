@@ -41,31 +41,38 @@ class Calculator(object):
 
     def _handleCalculate(self, tree:Calculate):
         switcher = {
-            OperatorType.ADD: lambda: self.calculate(tree.left) + self.calculate(tree.right),
-            OperatorType.SUBTRACT: lambda: self.calculate(tree.left) - self.calculate(tree.right),
-            OperatorType.MULTIPLY: lambda: self.calculate(tree.left) * self.calculate(tree.right),
-            OperatorType.DIVIDE: lambda: self.calculate(tree.left) / self.calculate(tree.right),
-            OperatorType.COMPARE_EQ: lambda: 1 if self.calculate(tree.left) == self.calculate(tree.right) else 0,
-            OperatorType.COMPARE_NE: lambda: 1 if self.calculate(tree.left) != self.calculate(tree.right) else 0,
-            OperatorType.COMPARE_G: lambda: 1 if self.calculate(tree.left) > self.calculate(tree.right) else 0,
-            OperatorType.COMPARE_GE: lambda: 1 if self.calculate(tree.left) >= self.calculate(tree.right) else 0,
-            OperatorType.COMPARE_L: lambda: 1 if self.calculate(tree.left) < self.calculate(tree.right) else 0,
-            OperatorType.COMPARE_LE: lambda: 1 if self.calculate(tree.left) <= self.calculate(tree.right) else 0,
-            OperatorType.UNARYMIN: lambda: -self.calculate(tree.right),
-            OperatorType.UNARYNOT: lambda: 0 if self.calculate(tree.right) else 1,
+            OperatorType.ADD: lambda left, right: left + right,
+            OperatorType.SUBTRACT: lambda left, right: left - right,
+            OperatorType.MULTIPLY: lambda left, right: left * right,
+            OperatorType.DIVIDE: lambda left, right: left / right,
+            OperatorType.COMPARE_EQ: lambda left, right: 1 if left == right else 0,
+            OperatorType.COMPARE_NE: lambda left, right: 1 if left != right else 0,
+            OperatorType.COMPARE_G: lambda left, right: 1 if left > right else 0,
+            OperatorType.COMPARE_GE: lambda left, right: 1 if left >= right else 0,
+            OperatorType.COMPARE_L: lambda left, right: 1 if left < right else 0,
+            OperatorType.COMPARE_LE: lambda left, right: 1 if left <= right else 0,
+            OperatorType.UNARYMIN: lambda left, right: -right,
+            OperatorType.UNARYNOT: lambda left, right: 0 if right else 1,
         }
-        test = switcher.get(tree.op, None)()
+
+        left = self.calculate(tree.left)
+        right = self.calculate(tree.right)
+
+        if type(left) == str or type(right) == str:
+            left = str(left)
+            right = str(right)
+
+        test = switcher.get(tree.op, None)(left, right)
         return test
 
     def _handleValue(self, tree:Value):
-        if tree.type == ValueType.VALUE:
-            return tree.value
-        else:
+        if tree.type == ValueType.VARIABLE:
             return self._variables[tree.value]
+        else:
+            return tree.value
 
     def _handlePrintCommand(self, tree:PrintCommand):
-        params = [self._handlePrintParam(param) for param in tree.params]
-        print("".join(params))
+        print(self.calculate(tree.str))
     
     def _handlePrintParam(self, param):
         if (type(param) == str):

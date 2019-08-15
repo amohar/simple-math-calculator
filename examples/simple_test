@@ -1,17 +1,4 @@
+$a = 23;
+$b = "test " + $a / " more test " + (124 + 18);
 
-# This is a simple test
-$a = 10;
-$b = 5;
-while ($b > 0)
-{
-    while($a > 0)
-    {
-        print("This is a: ", $a, " This is b: ", $b);
-        $a = $a - 1;
-        if ($a == 5)
-            break;
-    }
-    $b = $b - 1;
-    if ($b == 5)
-        break;
-}
+print($b);

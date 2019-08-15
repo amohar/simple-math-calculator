@@ -1,8 +1,9 @@
 from enum import Enum
 
 class ValueType(Enum):
-    VALUE = 1
-    VARIABLE = 2
+    VARIABLE = 1
+    NUMCONST = 2
+    STRCONST = 3
 
 class OperatorType(Enum):
     ADD = 1

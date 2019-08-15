@@ -19,8 +19,8 @@ class BreakCommand(object):
         pass
 
 class PrintCommand(object):
-    def __init__(self, params):
-        self.params = params
+    def __init__(self, str):
+        self.str = str
 
 class Value(object):
     def __init__(self, value, type):
