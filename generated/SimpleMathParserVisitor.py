@@ -64,6 +64,16 @@ class SimpleMathParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SimpleMathParser#FunctionCommand.
+    def visitFunctionCommand(self, ctx:SimpleMathParser.FunctionCommandContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SimpleMathParser#FunctionCall.
+    def visitFunctionCall(self, ctx:SimpleMathParser.FunctionCallContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SimpleMathParser#comment.
     def visitComment(self, ctx:SimpleMathParser.CommentContext):
         return self.visitChildren(ctx)

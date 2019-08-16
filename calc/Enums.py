@@ -18,3 +18,4 @@ class OperatorType(Enum):
     COMPARE_GE = 10
     COMPARE_L = 11
     COMPARE_LE = 12
+    FUNCCALL = 13

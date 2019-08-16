@@ -53,6 +53,7 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         else:
             return IfCommand(self.visit(ctx.value()), self.visit(ctx.body()))
 
+
     # Visit a parse tree produced by SimpleMathParser#IfCommandSingle.
     def visitIfCommandSingle(self, ctx:SimpleMathParser.IfCommandSingleContext):
         if ctx.elseBody != None:
@@ -91,6 +92,18 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         return PrintCommand(self.visit(ctx.value()))
 
 
+    # Visit a parse tree produced by SimpleMathParser#FunctionCommand.
+    def visitFunctionCommand(self, ctx:SimpleMathParser.FunctionCommandContext):
+        parameters = [param.symbol.text for param in ctx.VARIABLE()]
+        return FunctionCommand(ctx.funcName.text, parameters, self.visit(ctx.body()))
+
+
+    # Visit a parse tree produced by SimpleMathParser#FunctionCall.
+    def visitFunctionCall(self, ctx:SimpleMathParser.FunctionCallContext):
+        parameters = [self.visit(param) for param in ctx.value()]
+        return FunctionCall(ctx.funcName.text, parameters)
+
+
     # Visit a parse tree produced by SimpleMathParser#assign.
     def visitAssign(self, ctx:SimpleMathParser.AssignContext):
         if (ctx.value() != None):
@@ -111,6 +124,8 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
             return Calculate(None, OperatorType.UNARYMIN, self.visit(ctx.right))
         elif ctx.unaryNot != None:
             return Calculate(None, OperatorType.UNARYNOT, self.visit(ctx.right))
+        elif ctx.funcCall != None:
+            return Calculate(None, OperatorType.FUNCCALL, self.visit(ctx.funcCall))
         elif ctx.bracedValue != None:
             return self.visit(ctx.bracedValue)
         elif ctx.mul != None or ctx.add != None or ctx.cmp != None:

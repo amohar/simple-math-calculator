@@ -22,6 +22,17 @@ class PrintCommand(object):
     def __init__(self, str):
         self.str = str
 
+class FunctionCommand(object):
+    def __init__(self, name, params, body):
+        self.name = name
+        self.params = params
+        self.body = body
+
+class FunctionCall(object):
+    def __init__(self, name, params):
+        self.name = name
+        self.params = params
+
 class Value(object):
     def __init__(self, value, type):
         self.value = value

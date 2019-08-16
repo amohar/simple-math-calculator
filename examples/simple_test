@@ -1,4 +1,9 @@
-$a = 23;
-$b = "test " + $a / " more test " + (124 + 18);
 
-print($b);
+def test($haha)
+{
+}
+
+
+$bebe = test(5 + 1);
+
+//print($bebe);

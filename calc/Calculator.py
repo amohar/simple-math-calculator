@@ -5,6 +5,8 @@ class Calculator(object):
 
     def __init__(self):
         self._variables = {}
+        self._variableStack = []
+        self._functions = {}
         self._loopDepth = 0
         self._shouldBreak = False
 
@@ -18,7 +20,9 @@ class Calculator(object):
             PrintCommand: self._handlePrintCommand,
             IfCommand: self._handleIfCommand,
             WhileCommand: self._handleWhileCommand,
-            BreakCommand: self._handleBreakCommand
+            BreakCommand: self._handleBreakCommand,
+            FunctionCommand: self._handleFunctionCommand,
+            FunctionCall: self._handleFunctionCall,
         }
 
         command = switcher.get(type(astTree), None)
@@ -53,6 +57,7 @@ class Calculator(object):
             OperatorType.COMPARE_LE: lambda left, right: 1 if left <= right else 0,
             OperatorType.UNARYMIN: lambda left, right: -right,
             OperatorType.UNARYNOT: lambda left, right: 0 if right else 1,
+            OperatorType.FUNCCALL: lambda left, right: self._handleFunctionCall(right)
         }
 
         left = self.calculate(tree.left)
@@ -100,3 +105,21 @@ class Calculator(object):
             raise Exception("'break' command found outside loop.")
         else:
             self._shouldBreak = True
+   
+    def _handleFunctionCall(self, tree:FunctionCall):
+        funcCommand:FunctionCommand = self._functions[tree.name]
+        if len(funcCommand.params) != len(tree.params):
+            raise Exception("Call {0} doesn't have the same number of parameters as the method.".format(tree.name))
+        self._variableStack.append(self._variables)
+        self._variables = {}
+        for idx in range(len(funcCommand.params)):
+            name = funcCommand.params[idx]
+            value = self.calculate(tree.params[idx])
+            self._variables[name] = value
+        result = self.calculate(funcCommand.body)
+        self._variables = self._variableStack.pop()
+
+        return result
+
+    def _handleFunctionCommand(self, tree:FunctionCommand):
+        self._functions[tree.name] = tree
