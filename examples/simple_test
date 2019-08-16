@@ -1,4 +1,6 @@
 
+return;
+
 def test($haha)
 {
     while($haha > 0)

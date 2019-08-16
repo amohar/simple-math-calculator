@@ -7,8 +7,6 @@ class Calculator(object):
         self._variables = {}
         self._variableStack = []
         self._functions = {}
-        self._loopDepth = 0
-        self._functionDepth = 0
         self._shouldBreak = False
         self._shouldReturn = False
 
@@ -95,19 +93,14 @@ class Calculator(object):
             self.calculate(tree.elseBody)
     
     def _handleWhileCommand(self, tree:WhileCommand):
-        self._loopDepth += 1
         while (self.calculate(tree.condition)):
             self.calculate(tree.body)
             if (self._shouldBreak or self._shouldReturn):
                 self._shouldBreak = False
                 break
-        self._loopDepth -= 1
 
     def _handleBreakCommand(self, tree:BreakCommand):
-        if self._loopDepth == 0:
-            raise Exception("'break' command found outside loop.")
-        else:
-            self._shouldBreak = True
+        self._shouldBreak = True
    
     def _handleFunctionCall(self, tree:FunctionCall):
         funcCommand:FunctionCommand = self._functions[tree.name]
@@ -119,10 +112,8 @@ class Calculator(object):
             name = funcCommand.params[idx]
             value = self.calculate(tree.params[idx])
             self._variables[name] = value
-        self._functionDepth += 1
         self.calculate(funcCommand.body)
         result = self._variables.get("$$result", None)
-        self._functionDepth -= 1
         self._variables = self._variableStack.pop()
 
         return result
@@ -131,8 +122,5 @@ class Calculator(object):
         self._functions[tree.name] = tree
 
     def _handleReturnCommand(self, tree:ReturnCommand):
-        if self._functionDepth == 0:
-            raise Exception("'return' command found outside a function.")
-        else:
-            self._variables["$$result"] = self.calculate(tree.value)
-            self._shouldReturn = True
+        self._variables["$$result"] = self.calculate(tree.value)
+        self._shouldReturn = True

@@ -7,6 +7,10 @@ from calc.Enums import *
 # This class defines a complete listener for a parse tree produced by SimpleMathParser.
 class InterpreterMathParserVisitor(SimpleMathParserVisitor):
 
+    def __init__(self):
+        self._loopDepth = 0
+        self._functionDepth = 0
+
     def visitChildren(self, node):
         result = self.defaultResult()
         n = node.getChildCount()
@@ -74,16 +78,25 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
 
     # Visit a parse tree produced by SimpleMathParser#WhileCommandBody.
     def visitWhileCommandBody(self, ctx:SimpleMathParser.WhileCommandBodyContext):
-        return WhileCommand(self.visit(ctx.value()), self.visit(ctx.body()))
+        self._loopDepth += 1
+        command = WhileCommand(self.visit(ctx.value()), self.visit(ctx.body()))
+        self._loopDepth -= 1
+
+        return command
 
 
     # Visit a parse tree produced by SimpleMathParser#WhileCommandSingle.
     def visitWhileCommandSingle(self, ctx:SimpleMathParser.WhileCommandSingleContext):
-        return WhileCommand(self.visit(ctx.value()), self.visit(ctx.command()))
+        self._loopDepth += 1
+        command = WhileCommand(self.visit(ctx.value()), self.visit(ctx.command()))
+        self._loopDepth -= 1
 
+        return command
 
     # Visit a parse tree produced by SimpleMathParser#BreakCommand.
     def visitBreakCommand(self, ctx:SimpleMathParser.BreakCommandContext):
+        if self._loopDepth == 0:
+            raise Exception("'break' command found outside loop.")
         return BreakCommand()
 
 
@@ -101,11 +114,17 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
     # Visit a parse tree produced by SimpleMathParser#FunctionCall.
     def visitFunctionCall(self, ctx:SimpleMathParser.FunctionCallContext):
         parameters = [self.visit(param) for param in ctx.value()]
-        return FunctionCall(ctx.funcName.text, parameters)
+        self._functionDepth += 1
+        command = FunctionCall(ctx.funcName.text, parameters)
+        self._functionDepth -= 1
+
+        return command
 
 
         # Visit a parse tree produced by SimpleMathParser#ReturnCommand.
     def visitReturnCommand(self, ctx:SimpleMathParser.ReturnCommandContext):
+        if self._functionDepth == 0:
+            raise Exception("'return' command found outside a function.")
         return ReturnCommand(self.visit(ctx.value()))
 
 
