@@ -11,7 +11,8 @@ command : assign SEMI
         | break_command SEMI
         | print_command SEMI
         | function_command
-        | function_call SEMI;
+        | function_call SEMI
+        | return_command SEMI;
 if_command : IF BRACE_L value BRACE_R CURLY_L body CURLY_R (elseBody=else_command)?    # IfCommandBody
            | IF BRACE_L value BRACE_R command (elseBody=else_command)?                 # IfCommandSingle;
 else_command : ELSE CURLY_L elseBody=body CURLY_R                                      # ElseCommandBody
@@ -22,6 +23,7 @@ break_command : BREAK                                                           
 print_command : PRINT BRACE_L (printParams=value)? BRACE_R                             # PrintCommand;
 function_command : DEF funcName=NAME BRACE_L VARIABLE* BRACE_R CURLY_L body CURLY_R    # FunctionCommand;
 function_call : funcName=NAME BRACE_L value* BRACE_R                                   # FunctionCall;
+return_command : RETURN (value)?                                                       # ReturnCommand;
 comment : COMMENT;
 assign : VARIABLE EQUAL value;
 

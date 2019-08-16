@@ -33,6 +33,10 @@ class FunctionCall(object):
         self.name = name
         self.params = params
 
+class ReturnCommand(object):
+    def __init__(self, value):
+        self.value = value
+
 class Value(object):
     def __init__(self, value, type):
         self.value = value

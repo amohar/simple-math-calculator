@@ -104,6 +104,11 @@ class InterpreterMathParserVisitor(SimpleMathParserVisitor):
         return FunctionCall(ctx.funcName.text, parameters)
 
 
+        # Visit a parse tree produced by SimpleMathParser#ReturnCommand.
+    def visitReturnCommand(self, ctx:SimpleMathParser.ReturnCommandContext):
+        return ReturnCommand(self.visit(ctx.value()))
+
+
     # Visit a parse tree produced by SimpleMathParser#assign.
     def visitAssign(self, ctx:SimpleMathParser.AssignContext):
         if (ctx.value() != None):

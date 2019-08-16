@@ -26,8 +26,9 @@ WHILE=25
 BREAK=26
 PRINT=27
 DEF=28
-NAME=29
-WS=30
+RETURN=29
+NAME=30
+WS=31
 '='=1
 '+'=2
 '-'=3
@@ -52,3 +53,4 @@ WS=30
 'break'=26
 'print'=27
 'def'=28
+'return'=29

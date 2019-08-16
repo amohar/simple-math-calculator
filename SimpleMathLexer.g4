@@ -31,6 +31,7 @@ WHILE: 'while';
 BREAK: 'break';
 PRINT: 'print';
 DEF: 'def';
+RETURN: 'return';
 NAME: NAME_CHAR+;
 
 WS: [ \n\t\r]+ -> skip;

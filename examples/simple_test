@@ -1,9 +1,9 @@
 
 def test($haha)
 {
+    return $haha + 2;
 }
-
 
 $bebe = test(5 + 1);
 
-//print($bebe);
+print($bebe);

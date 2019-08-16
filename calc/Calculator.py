@@ -8,7 +8,8 @@ class Calculator(object):
         self._variableStack = []
         self._functions = {}
         self._loopDepth = 0
-        self._shouldBreak = False
+        self._functionDepth = 0
+        self._shouldJumpOut = False
 
     def calculate(self, astTree):
         switcher = {
@@ -23,6 +24,7 @@ class Calculator(object):
             BreakCommand: self._handleBreakCommand,
             FunctionCommand: self._handleFunctionCommand,
             FunctionCall: self._handleFunctionCall,
+            ReturnCommand: self._handleReturnCommand,
         }
 
         command = switcher.get(type(astTree), None)
@@ -34,11 +36,11 @@ class Calculator(object):
     def _handleList(self, tree):
         for item in tree:
             self.calculate(item)
-            if self._shouldBreak:
-                break
+            if self._shouldJumpOut:
+                return self._variables.get("$$result", None)
 
     def _handleBody(self, tree:Body):
-        self.calculate(tree.lines)
+        return self.calculate(tree.lines)
 
     def _handleAssign(self, tree:Assign):
         self._variables[tree.variable] = self.calculate(tree.value)
@@ -57,11 +59,11 @@ class Calculator(object):
             OperatorType.COMPARE_LE: lambda left, right: 1 if left <= right else 0,
             OperatorType.UNARYMIN: lambda left, right: -right,
             OperatorType.UNARYNOT: lambda left, right: 0 if right else 1,
-            OperatorType.FUNCCALL: lambda left, right: self._handleFunctionCall(right)
+            OperatorType.FUNCCALL: lambda left, right: right,
         }
 
-        left = self.calculate(tree.left)
-        right = self.calculate(tree.right)
+        left = self.calculate(tree.left) if tree.left != None else None
+        right = self.calculate(tree.right) if tree.right != None else None
 
         if type(left) == str or type(right) == str:
             left = str(left)
@@ -95,8 +97,8 @@ class Calculator(object):
         self._loopDepth += 1
         while (self.calculate(tree.condition)):
             self.calculate(tree.body)
-            if (self._shouldBreak):
-                self._shouldBreak = False
+            if (self._shouldJumpOut):
+                self._shouldJumpOut = False
                 break
         self._loopDepth -= 1
 
@@ -104,7 +106,7 @@ class Calculator(object):
         if self._loopDepth == 0:
             raise Exception("'break' command found outside loop.")
         else:
-            self._shouldBreak = True
+            self._shouldJumpOut = True
    
     def _handleFunctionCall(self, tree:FunctionCall):
         funcCommand:FunctionCommand = self._functions[tree.name]
@@ -116,10 +118,20 @@ class Calculator(object):
             name = funcCommand.params[idx]
             value = self.calculate(tree.params[idx])
             self._variables[name] = value
+        self._functionDepth += 1
         result = self.calculate(funcCommand.body)
+        self._functionDepth -= 1
         self._variables = self._variableStack.pop()
+        self._shouldJumpOut = False
 
         return result
 
     def _handleFunctionCommand(self, tree:FunctionCommand):
         self._functions[tree.name] = tree
+
+    def _handleReturnCommand(self, tree:ReturnCommand):
+        if self._functionDepth == 0:
+            raise Exception("'return' command found outside a function.")
+        else:
+            self._variables["$$result"] = self.calculate(tree.value)
+            self._shouldJumpOut = True
