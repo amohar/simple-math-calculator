@@ -1,9 +1,12 @@
 
 def test($haha)
 {
-    return $haha + 2;
+    while($haha > 0)
+    {
+        if ($haha == 5)
+            return $haha;
+        $haha = $haha - 1;
+    }
 }
 
-$bebe = test(5 + 1);
-
-print($bebe);
+print(test(5 + 8));

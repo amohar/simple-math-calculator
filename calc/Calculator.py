@@ -9,7 +9,8 @@ class Calculator(object):
         self._functions = {}
         self._loopDepth = 0
         self._functionDepth = 0
-        self._shouldJumpOut = False
+        self._shouldBreak = False
+        self._shouldReturn = False
 
     def calculate(self, astTree):
         switcher = {
@@ -36,11 +37,11 @@ class Calculator(object):
     def _handleList(self, tree):
         for item in tree:
             self.calculate(item)
-            if self._shouldJumpOut:
-                return self._variables.get("$$result", None)
+            if self._shouldBreak or self._shouldReturn:
+                return
 
     def _handleBody(self, tree:Body):
-        return self.calculate(tree.lines)
+        self.calculate(tree.lines)
 
     def _handleAssign(self, tree:Assign):
         self._variables[tree.variable] = self.calculate(tree.value)
@@ -97,8 +98,8 @@ class Calculator(object):
         self._loopDepth += 1
         while (self.calculate(tree.condition)):
             self.calculate(tree.body)
-            if (self._shouldJumpOut):
-                self._shouldJumpOut = False
+            if (self._shouldBreak or self._shouldReturn):
+                self._shouldBreak = False
                 break
         self._loopDepth -= 1
 
@@ -106,7 +107,7 @@ class Calculator(object):
         if self._loopDepth == 0:
             raise Exception("'break' command found outside loop.")
         else:
-            self._shouldJumpOut = True
+            self._shouldBreak = True
    
     def _handleFunctionCall(self, tree:FunctionCall):
         funcCommand:FunctionCommand = self._functions[tree.name]
@@ -119,10 +120,10 @@ class Calculator(object):
             value = self.calculate(tree.params[idx])
             self._variables[name] = value
         self._functionDepth += 1
-        result = self.calculate(funcCommand.body)
+        self.calculate(funcCommand.body)
+        result = self._variables.get("$$result", None)
         self._functionDepth -= 1
         self._variables = self._variableStack.pop()
-        self._shouldJumpOut = False
 
         return result
 
@@ -134,4 +135,4 @@ class Calculator(object):
             raise Exception("'return' command found outside a function.")
         else:
             self._variables["$$result"] = self.calculate(tree.value)
-            self._shouldJumpOut = True
+            self._shouldReturn = True
